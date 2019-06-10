@@ -64,7 +64,7 @@ docker run --volume LOCAL_FOLDER_PATH:/work:rw --rm --interactive --tty fscm/too
 ## Build
 
 Build instructions can be found
-[here](https://github.com/fscm/docker-tools/README.build.md).
+[here](https://github.com/fscm/docker-tools/blob/master/README.build.md).
 
 ## Versioning
 
