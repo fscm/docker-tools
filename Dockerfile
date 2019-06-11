@@ -1,6 +1,7 @@
 FROM fscm/debian:stretch as build
 
 ARG BUSYBOX_VERSION="1.30.0"
+ARG HUB_VERSION="2.11.2"
 ARG PACKER_VERSION="1.4.1"
 ARG PYTHON_VERSION="3.7.3"
 ARG PYTHON_PIP_VERSION="19.1"
@@ -88,6 +89,8 @@ RUN \
   find /build/ -depth \( \( -type d -a \( -name test -o -name tests -o -name __pycache__ \) \) -o \( -type f -a \( -name '*.pyc' -o -name '*.pyo' -o -name '*.bat' \) \) \) -exec rm -rf '{}' + && \
   for p in $(find /build/bin/ -type f); do s="$(basename ${p})"; t="$(dirname ${p})/$(echo ${s} | sed 's/-3.7//;s/3.7m//;s/3.7//')"; if [ ! -f "${t}" ]; then ln -s "${s}" "${t}"; fi; done && \
   cd - && \
+  curl -fsSL --retry 3 --insecure "https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz" | tar xz --no-same-owner --strip-components=1 -C /build/ hub-linux-amd64-${HUB_VERSION}/bin && \
+  chmod 0755 /build/bin/hub && \
   curl -fsSL --retry 3 --insecure "https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip" | bsdtar xf - --strip-components=0 --no-same-permissions --no-same-owner -C /build/bin/ && \
   chmod 0755 /build/bin/packer && \
   curl -fsSL --retry 3 --insecure "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" | bsdtar xf - --strip-components=0 --no-same-permissions --no-same-owner -C /build/bin/ && \

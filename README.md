@@ -17,6 +17,7 @@ The docker image contains the following tools:
 - AWS CLI
 - Azure CLI
 - Git
+- Hub
 - Packer
 - Terraform
 
@@ -46,6 +47,7 @@ List of tools ('TOOL_NAME'):
 * `aws` - The AWS Command Line Interface tool.
 * `az` - The Azure CLI.
 * `git` - The distributed version control system.
+* `hub` - A command-line tool for GitHub
 * `packer` - The HashiCorp Packer tool.
 * `terraform` - The HashiCorp Terraform tool.
 
