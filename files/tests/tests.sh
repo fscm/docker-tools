@@ -42,6 +42,15 @@ else
   exit 3
 fi
 
+/bin/echo -n "[TEST] Check if Git is installed... "
+git --version &>/dev/null
+if [[ "$?" -eq "0" ]]; then
+  /bin/echo 'OK'
+else
+  /bin/echo 'Failed'
+  exit 3
+fi
+
 /bin/echo -n "[TEST] Check if Packer is installed... "
 packer --version &>/dev/null
 if [[ "$?" -eq "0" ]]; then

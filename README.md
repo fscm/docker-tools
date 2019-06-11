@@ -16,6 +16,7 @@ The docker image contains the following tools:
 
 - AWS CLI
 - Azure CLI
+- Git
 - Packer
 - Terraform
 
@@ -44,6 +45,7 @@ docker run --rm --interactive --tty fscm/tools:latest TOOL_NAME
 List of tools ('TOOL_NAME'):
 * `aws` - The AWS Command Line Interface tool.
 * `az` - The Azure CLI.
+* `git` - The distributed version control system.
 * `packer` - The HashiCorp Packer tool.
 * `terraform` - The HashiCorp Terraform tool.
 

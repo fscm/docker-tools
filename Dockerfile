@@ -24,6 +24,7 @@ RUN \
     dnsutils \
     g++ \
     gcc \
+    git \
     groff-base \
     libbluetooth-dev \
     libbz2-dev \
@@ -58,8 +59,9 @@ RUN \
   chmod -R o+rw /src/apt && \
   cp -r /var/lib/dpkg/* /src/apt/dpkg/ && \
   cd /src/apt && \
-  apt-get -qq -y -o=Dpkg::Use-Pty=0 download bash groff-base && \
+  apt-get -qq -y -o=Dpkg::Use-Pty=0 download bash git groff-base && \
   dpkg --unpack --force-all --no-triggers --instdir=/build --admindir=/src/apt/dpkg --path-exclude="/etc*" --path-exclude="/usr/share*" bash_*.deb && \
+  dpkg --unpack --force-all --no-triggers --instdir=/build --admindir=/src/apt/dpkg --path-exclude="/etc*" --path-exclude="/usr/share*" --path-exclude="/var*" git_*.deb && \
   dpkg --unpack --force-all --no-triggers --instdir=/build --admindir=/src/apt/dpkg --path-exclude="/etc*" --path-exclude="/usr/lib*" --path-exclude="/usr/share/doc*" --path-exclude="/usr/share/man*" groff-base_*.deb && \
   ln -s /bin/bash /build/bin/sh && \
   for f in `find /build -name '*.dpkg-new'`; do mv "${f}" "${f%.dpkg-new}"; done && \
