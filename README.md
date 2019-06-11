@@ -8,7 +8,8 @@ A Docker image with some useful DevOps tools.
 
 ## Supported tags
 
-- `0.0.1`, `latest`
+- `0.0.1`
+- `0.0.2`, `latest`
 
 ## What is included?
 
