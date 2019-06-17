@@ -48,7 +48,7 @@ if [[ "$?" -eq "0" ]]; then
   /bin/echo 'OK'
 else
   /bin/echo 'Failed'
-  exit 3
+  exit 5
 fi
 
 /bin/echo -n "[TEST] Check if Hub is installed... "
@@ -57,7 +57,7 @@ if [[ "$?" -eq "0" ]]; then
   /bin/echo 'OK'
 else
   /bin/echo 'Failed'
-  exit 3
+  exit 6
 fi
 
 /bin/echo -n "[TEST] Check if Packer is installed... "
@@ -66,7 +66,7 @@ if [[ "$?" -eq "0" ]]; then
   /bin/echo 'OK'
 else
   /bin/echo 'Failed'
-  exit 4
+  exit 7
 fi
 
 /bin/echo -n "[TEST] Check if Terraform is installed... "
@@ -75,7 +75,7 @@ if [[ "$?" -eq "0" ]]; then
   /bin/echo 'OK'
 else
   /bin/echo 'Failed'
-  exit 5
+  exit 8
 fi
 
 exit 0
