@@ -1,9 +1,5 @@
 # Tools
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/fscm/tools.svg?color=black&logo=docker&logoColor=white&style=flat-square)](https://hub.docker.com/r/fscm/tools)
-[![Docker Stars](https://img.shields.io/docker/stars/fscm/tools.svg?color=black&logo=docker&logoColor=white&style=flat-square)](https://hub.docker.com/r/fscm/tools)
-[![Docker Build Status](https://img.shields.io/docker/cloud/build/fscm/tools.svg?color=black&logo=docker&logoColor=white&style=flat-square)](https://hub.docker.com/r/fscm/tools)
-
 A Docker image with some useful DevOps tools.
 
 ## Supported tags
