@@ -1,3 +1,8 @@
+**[DEPRECATED] This repository is no longer maintained**
+> While this project is fully functional, the content is no longer maintained and therefore is no longer up to date. You are still welcome to explore, learn, and use the code provided here.
+>
+> The original images are also no longer available at [Docker Hub](https://hub.docker.com/).
+
 # Tools
 
 A Docker image with some useful DevOps tools.
